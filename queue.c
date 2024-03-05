@@ -14,7 +14,10 @@
 /* Create an empty queue */
 struct list_head *q_new()
 {
-    return NULL;
+    struct list_head *tmp = malloc(sizeof(struct list_head));
+    if (tmp != NULL)
+        INIT_LIST_HEAD(tmp);
+    return tmp;
 }
 
 /* Free all storage used by queue */
